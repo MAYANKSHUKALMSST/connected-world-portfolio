@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Code, Cpu, Wrench, Award } from "lucide-react";
+import { Code, Cpu, Wrench, Award, Network } from "lucide-react";
 
 const skillCategories = [
   {
@@ -17,6 +17,15 @@ const skillCategories = [
     title: "Hardware Analysis Tools",
     icon: Wrench,
     skills: ["Oscilloscope", "Signal Generator", "Variable Power Supply", "Logic Analyzer"]
+  },
+  {
+    title: "Protocols & Networking",
+    icon: Network,
+    skills: [
+      "MQTT", "CoAP", "HTTP/HTTPS", "AMQP", "WebSocket", "LwM2M", "OPC UA", 
+      "TCP/IP", "UDP", "6LoWPAN", "Wi-Fi", "BLE", "Zigbee", "LoRaWAN", 
+      "Cellular (2G–NB-IoT)", "I2C", "SPI", "UART", "TLS/SSL", "DTLS", "OAuth 2.0"
+    ]
   }
 ];
 
@@ -44,7 +53,7 @@ const SkillsSection = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-8 mb-16">
           {skillCategories.map((category, index) => (
             <Card key={index} className="bg-gradient-card border-border/50 hover:shadow-glow transition-all duration-300">
               <CardHeader className="text-center">

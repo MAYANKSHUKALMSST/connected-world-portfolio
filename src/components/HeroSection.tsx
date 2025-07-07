@@ -1,9 +1,15 @@
 import { Mail, Phone, Globe, Github, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-hero overflow-hidden">
+      {/* Theme toggle button */}
+      <div className="absolute top-6 right-6 z-20">
+        <ThemeToggle />
+      </div>
+      
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
@@ -49,7 +55,12 @@ const HeroSection = () => {
               GitHub
             </Button>
             
-            <Button variant="outline" size="lg" className="group">
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="group"
+              onClick={() => window.open('https://www.linkedin.com/in/mayank-shukla-24086112a/', '_blank')}
+            >
               <Linkedin className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
               LinkedIn
             </Button>

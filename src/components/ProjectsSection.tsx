@@ -25,11 +25,11 @@ const projects = [
     description: "Complete drone system development with embedded flight control and telemetry capabilities"
   },
   {
-    title: "OBD for Amazon Fleet Management",
-    company: "Amazon Partnership",
+    title: "OBD for Fleet Management",
+    company: "Enterprise Solutions",
     date: "June 2025",
     status: "Deployed",
-    description: "Fleet management solution using OBD technology for Amazon's logistics operations"
+    description: "Fleet management solution using OBD technology for logistics operations"
   },
   {
     title: "Custom Measurement for Tailoring Using ML",
