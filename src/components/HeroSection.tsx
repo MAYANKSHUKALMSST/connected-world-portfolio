@@ -1,14 +1,16 @@
-import { Mail, Phone, Globe, Github, Linkedin } from "lucide-react";
+import { Mail, Phone, Globe, Github, Linkedin, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 const HeroSection = () => {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-hero overflow-hidden">
-      {/* Theme toggle button */}
-      <div className="absolute top-6 right-6 z-20">
-        <ThemeToggle />
-      </div>
+    <section id="about" className="relative min-h-screen flex items-center justify-center bg-gradient-hero overflow-hidden pt-20">
       
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -44,15 +46,10 @@ const HeroSection = () => {
             </Button>
           </div>
           
-          <div className="flex justify-center gap-6">
-            <Button size="lg" className="group">
-              <Globe className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-              Website
-            </Button>
-            
+          <div className="flex flex-wrap justify-center gap-4 mb-16">
             <Button variant="outline" size="lg" className="group">
               <Github className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-              GitHub
+              View GitHub
             </Button>
             
             <Button 
@@ -64,6 +61,21 @@ const HeroSection = () => {
               <Linkedin className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
               LinkedIn
             </Button>
+
+            <Button variant="outline" size="lg" className="group">
+              <Globe className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+              Website
+            </Button>
+          </div>
+
+          {/* Scroll down indicator */}
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+            <button
+              onClick={() => scrollToSection('experience')}
+              className="p-3 rounded-full border border-border/50 hover:border-primary/50 transition-colors group"
+            >
+              <ChevronDown className="w-6 h-6 text-muted-foreground group-hover:text-primary transition-colors animate-bounce" />
+            </button>
           </div>
         </div>
       </div>
